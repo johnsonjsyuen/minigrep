@@ -3,7 +3,7 @@ use std::fs::File;
 use std::io::{Read, stdin};
 use std::iter::Iterator;
 
-fn grep<'a>(pattern: &'a str, file: &mut Read, action: &Fn(&str) -> ()) {
+fn grep(pattern: &str, file: &mut Read, action: &Fn(&str) -> ()) {
 
     let mut contents = String::new();
 
