@@ -12,10 +12,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fbc4877-906c-4996-a202-479bc6fb0a69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-    </list>
+    <list default="true" id="0fbc4877-906c-4996-a202-479bc6fb0a69" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +52,11 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="lVSlIPrJ" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="52" />
-    <option name="y" value="23" />
-    <option name="width" value="1868" />
-    <option name="height" value="1177" />
+    <option name="y" value="413" />
+    <option name="width" value="1628" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -105,13 +102,14 @@
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="23" width="1868" height="1177" extended-state="0" />
+    <frame x="52" y="413" width="1628" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11171961" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12862547" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
@@ -133,7 +131,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="write grep" />
-    <option name="LAST_COMMIT_MESSAGE" value="write grep" />
+    <MESSAGE value="remove lifetime" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove lifetime" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/mod.rs">
