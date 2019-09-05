@@ -3,7 +3,7 @@ use std::fs::File;
 use std::io::{Read, stdin};
 use std::iter::Iterator;
 
-fn grep(pattern: &str, file: &mut dyn Read, action: &dyn FnMut(Match) -> ()) {
+fn grep(pattern: &str, file: &mut dyn Read, action: &mut dyn FnMut(Match) -> ()) {
 
     let mut contents = String::new();
 
@@ -42,9 +42,9 @@ fn main() {
 
     if let [_, pattern, ref filename] = args.as_slice() {
         let mut file = File::open(filename).expect("Cannot open file");
-       grep(pattern, &mut file, &print_match)
+       grep(pattern, &mut file, &mut print_match)
     } else if let [_, pattern] = args.as_slice() {
-        grep(pattern, &mut stdin(), &print_match)
+        grep(pattern, &mut stdin(), &mut print_match)
     } else {
         panic!("wrong number of arguments")
     }
@@ -70,7 +70,7 @@ mod tests {
 
         let mut file = Cursor::new("hello world\nrandom stuff\nworld is nice".as_bytes());
 
-        grep("world", &mut file, &|m| results.push(m));
+        grep("world", &mut file, &mut |m| results.push(m));
 
         assert_eq!(results, vec![
             Match {
