@@ -3,6 +3,8 @@ use std::fs::File;
 use std::io::{Read, stdin};
 use std::iter::Iterator;
 
+use colored::*;
+
 fn grep(pattern: &str, file: &mut dyn Read, action: &mut dyn FnMut(Match) -> ()) {
 
     let mut contents = String::new();
@@ -19,7 +21,7 @@ fn grep(pattern: &str, file: &mut dyn Read, action: &mut dyn FnMut(Match) -> ())
 #[derive(Debug, PartialEq, Eq)]
 struct Match {
     line: String,
-    hit: (u32, u32), // starts and ends of each match
+    hit: (usize, usize), // starts and ends of each match
     // FIXME multiple hits in the same line
 }
 
@@ -27,14 +29,21 @@ fn matches(line: &str, pattern: &str) -> Option<Match> {
     match line.find(pattern) {
         Some(start) => Some(Match{
             line: line.to_string(),
-            hit: (start as u32, (start + pattern.len()) as u32),
+            hit: (start, (start + pattern.len())),
         }),
         None => None,
     }
 }
 
 fn print_match(match_: Match) {
-    println!("{}", match_.line)
+    let ln = match_.line;
+    let hit = match_.hit;
+
+    println!("{}{}{}",
+        &ln[0..hit.0],
+        &ln[hit.0..hit.1].red(),
+        &ln[hit.1..ln.len()],
+    )
 }
 
 fn main() {
